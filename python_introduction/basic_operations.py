@@ -1,5 +1,5 @@
-number1 = 18
-number2 = 41
+number1 = 10
+number2 = 5
 
 sum = number1 + number2
 difference = number1 - number2
