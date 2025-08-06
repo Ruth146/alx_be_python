@@ -1,4 +1,3 @@
-# Base Class - Book
 class Book:
     def __init__(self, title, author):
         self.title = title
@@ -8,7 +7,6 @@ class Book:
         return f"Book: {self.title} by {self.author}"
 
 
-# Derived Class - EBook
 class EBook(Book):
     def __init__(self, title, author, file_size):
         super().__init__(title, author)
@@ -18,7 +16,6 @@ class EBook(Book):
         return f"EBook: {self.title} by {self.author}, File Size: {self.file_size}KB"
 
 
-# Derived Class - PrintBook
 class PrintBook(Book):
     def __init__(self, title, author, page_count):
         super().__init__(title, author)
@@ -28,7 +25,6 @@ class PrintBook(Book):
         return f"PrintBook: {self.title} by {self.author}, Page Count: {self.page_count}"
 
 
-# Library Class (Composition)
 class Library:
     def __init__(self):
         self.books = []
@@ -42,20 +38,16 @@ class Library:
 from library_system import Book, EBook, PrintBook, Library
 
 def main():
-    # Create a Library instance
     my_library = Library()
 
-    # Create instances of each type of book
     classic_book = Book("Pride and Prejudice", "Jane Austen")
     digital_novel = EBook("Snow Crash", "Neal Stephenson", 500)
     paper_novel = PrintBook("The Catcher in the Rye", "J.D. Salinger", 234)
 
-    # Add books to the library
     my_library.add_book(classic_book)
     my_library.add_book(digital_novel)
     my_library.add_book(paper_novel)
 
-    # List all books in the library
     my_library.list_books()
 
 if __name__ == "__main__":
