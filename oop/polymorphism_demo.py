@@ -20,7 +20,7 @@ class Circle(Shape):
 
     def area(self):
         return math.pi * (self.radius ** 2)
-      from polymorphism_demo import Shape, Rectangle, Circle
+from polymorphism_demo import Shape, Rectangle, Circle
 
 def main():
     shapes = [
