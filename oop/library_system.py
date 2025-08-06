@@ -1,30 +1,34 @@
+# Base Class
 class Book:
     def __init__(self, title, author):
         self.title = title
         self.author = author
 
-    def get_info(self):
+    def get_description(self):
         return f"Book: {self.title} by {self.author}"
 
 
+# Derived Class - EBook
 class EBook(Book):
     def __init__(self, title, author, file_size):
         super().__init__(title, author)
         self.file_size = file_size
 
-    def get_info(self):
+    def get_description(self):
         return f"EBook: {self.title} by {self.author}, File Size: {self.file_size}KB"
 
 
+# Derived Class - PrintBook
 class PrintBook(Book):
     def __init__(self, title, author, page_count):
         super().__init__(title, author)
         self.page_count = page_count
 
-    def get_info(self):
+    def get_description(self):
         return f"PrintBook: {self.title} by {self.author}, Page Count: {self.page_count}"
 
 
+# Library Class (Composition)
 class Library:
     def __init__(self):
         self.books = []
@@ -34,9 +38,10 @@ class Library:
 
     def list_books(self):
         for book in self.books:
-            print(book.get_info())
+            print(book.get_description())
 
 
+# Main Testing Function
 def main():
     # Create a Library instance
     my_library = Library()
@@ -55,5 +60,6 @@ def main():
     my_library.list_books()
 
 
+# Run the main function
 if __name__ == "__main__":
     main()
